@@ -1,0 +1,53 @@
+cal = input("사칙연산 (+, -, *, /) 입력: ")
+if cal == '+':
+    pass
+elif cal == '-':
+    pass
+elif cal == '*':
+    pass
+elif cal == '/':
+    pass
+else:
+    print("잘못된 입력입니다.")
+    exit()
+
+num1 = float(input("첫 번째 양의 정수 입력: "))
+if  num1 % 1 == 0 and num1 > 0:
+    pass
+else:
+    print("잘못된 입력입니다.")
+    exit()
+num2 = float(input("두 번째 양의 정수 입력: "))
+if num2 % 1 == 0 and num2 > 0:
+    pass
+else:
+    print("잘못된 입력입니다.")
+    exit()
+
+res = 0
+if cal == '+':
+    res = num1 + num2
+elif cal == '-':
+    res = num1 - num2
+elif cal == '*':
+    res = num1 * num2
+elif cal == '/':
+    res = round(num1 / num2)
+else:
+    print("잘못된 입력입니다.")
+    exit()
+
+if num1 < num2 and cal == '+':
+    num1, num2 = num2, num1
+elif num1 < num2 and cal == '-':
+    num1, num2 = num2, num1
+    res = num1 - num2
+elif num1 < num2 and cal == '*':
+    num1, num2 = num2, num1
+elif num1 < num2 and cal == '/':
+    num1, num2 = num2, num1
+    res = round(num1 / num2)
+else:
+    pass
+
+print('%d' %num1 + ' %c' %cal + ' %d' %num2 + ' = %d' %res)
